@@ -1,0 +1,436 @@
+/*tirando os espaçamentos do documento*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/****Formatação do cabeçalho****/
+header{
+    width: 1200px;
+    height: 180px;
+    margin: 0 auto;
+}
+/*div que comporta o que o usuário pode fazer: buscar ou acessar sua conta*/
+.usuarioPode{
+    width: 100%;
+    height: 40px;
+    padding-top: 5px;
+    border-bottom: 1px solid #ddd;
+}
+    .buscar{
+        width: 20%;
+        height: 28px;
+        float: left;
+    }
+        #busca{
+            width: 100%;
+            height: 28px;
+            border: 1px solid #ddd;
+            outline: none;
+            text-indent: 10px;
+            font-size: 15px;
+            color: #bbb;
+        }
+        #busca:focus{
+            border: 1px solid #bbb;
+            transition: all 0.3s;
+        }
+        .btnPesquisa{
+            width: 30px;
+            height: 23px;
+            outline: none;
+            background-color: #fff;
+            border: 0;
+            border-left: 1px solid #ddd;
+            background-image: url("../imagens/lupa.png");
+            background-size: 70%;
+            background-position: 50% 0%;
+            background-repeat: no-repeat;
+            position: absolute;
+            padding-left: 5px;
+            top: 8px;
+            left: 280px;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+        .btnPesquisa:hover{
+            opacity: 1;
+        }
+    .acessar{
+        width: 30%;
+        height: 28px;
+        float: right;
+        padding-top: -10px;
+    }
+        .icones{
+            width: 28px;
+            height: 28px;
+
+        }
+
+/*Logotipo da empresa*/
+.logo{
+    text-align: center;
+    height: 130px;
+    padding-top: 20px;
+}
+#logo{
+    width: 310px;
+    height: 110px;
+}
+
+/****Formatação do menu****/
+nav{
+    width: 1200px;
+    height: 50px;
+    border-bottom: 3px solid #000;
+    background-color: #757575;
+    margin: 0 auto;
+}
+    .menu{
+        list-style: none;
+        width: 980px;
+        height: 50px;
+        margin: 0 auto;
+    }
+    .menu li{
+        float: left;
+        width: 140px;
+        height: 50px;
+        padding-top: 15px;
+        text-align: center;
+
+    }
+    .menu li:hover a{
+        color: #000;
+        transition: all 0.3s;
+    }
+    .menu li a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+/****Formatação do conteúdo****/
+.content{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+    /*Conteiner das informações de venda*/
+    .conteinerInformacoes{
+        width: 100%;
+        height: 70px;
+        padding-top: 10px;
+    }
+    .informacoes{
+        width: 25%;
+        height: 50px;
+        padding-left: 5px;
+        border-right: 1px solid #ccc;
+        padding-top: 5px;
+        float: left;
+    }
+    .informacoes:nth-child(4){
+        border-right: 0;
+    }
+    .informacoes p{
+        color: #757575;
+        float: left;
+        margin-left: 5px;
+    }
+    .informacoes p:nth-child(1){
+        font-size: 30px;
+    }
+    .informacoes p:nth-child(2){
+        font-size: 15px;
+    }
+
+    /*Slider*/
+    .conteinerSlider{
+        width: 100%;
+        height: 620px;
+        margin-top: 20px;
+        position: relative;
+        padding-top: 460px;
+    }
+        .conteinerSlider .imagemEmFoco{
+            position: absolute;
+            left: 0; top: 0;
+            transition: all 0.5s;
+            width: 100%;
+            height: 450px;
+        }
+        .conteinerSlider input[name='botaoSlider']{
+            display: none;
+        }
+        .conteinerSlider label{
+            width: 292px;
+            height: 145px;
+            margin-right: 10px;
+        	border: 2px solid #999;
+        	float: left;
+        	cursor: pointer;
+        	transition: all 0.5s;
+            opacity: 0.6;
+        }
+        .conteinerSlider #last{
+            margin-right: 0px;
+        }
+        .conteinerSlider label .imagemSecundaria{
+            display: block;
+            width: 288px;
+            height: 141px;
+        }
+        /*quando uma imagem secundaria for esccolhida:*/
+        .conteinerSlider input[name='botaoSlider']:checked+label {
+        	border-color: #666;
+        	opacity: 1;
+        }
+        /*quando uma imagem secundaria for esccolhida vai sumir a que estava em foco*/
+        .conteinerSlider input[name='botaoSlider'] ~ .imagemEmFoco {
+        	opacity: 0;
+        	transform: scale(1.0);
+        }
+        .conteinerSlider input[name='botaoSlider']:checked+label+.imagemEmFoco {
+        	opacity: 1;
+        	transform: scale(1);
+        }
+
+
+
+/***Destaques***/
+.destaques{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 1200px;
+    height: 380px;
+}
+    .destaques fieldset{
+        text-align: center;
+        border: 0;
+        border-top: 2px solid #666;
+    }
+    .destaques fieldset legend{
+        font-size: 18px;
+        font-weight: bold;
+        color: #666;
+        padding: 0 10px;
+    }
+
+    /*carrossel de produtos*/
+    .conteinerProdutos{
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+    }
+        .produto{
+            width: 250px;
+            height: 300px;
+            margin-left: 40px;
+            float: left;
+        }
+            .produto .imgProduto{
+                width: 100%;
+                height: 210px;
+                text-align: center;
+            }
+                .produto .imgProduto img{
+                    width: 150px;
+                    height: 200px;
+                }
+                .produto .imgProduto figcaption{
+                    position: relative;
+                    bottom: 220px;
+                    background-color: #ff0000;
+                    color: #fff;
+                    width: 120px;
+                    padding: 5px;
+                }
+            .produto .descProduto{
+                width: 100%;
+                height: 50px;
+                padding-left: 10px;
+                text-align: center;
+            }
+                .produto .descProduto .nome{
+                    color: #757575;
+                    font-size: 17px;
+                }
+                .produto .descProduto .preco{
+                    color: #757575;
+                    font-size: 17px;
+                }
+                    .preco span{
+                        color: #ff0000;
+                    }
+                    .preco #antigo{
+                        color: #aaa;
+                        text-decoration: line-through;
+                    }
+
+/***Formulario***/
+.conteinerForm{
+    width: 1200px;
+    height: 280px;
+    margin: 0 auto;
+    border-top: 3px groove #666;
+    border-bottom: 3px groove #666;
+}
+    .conteinerForm form{
+        width: 700px;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+    .conteinerForm form label{
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .dados{
+        width: 280px;
+        height: 35px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        font-size: 17px;
+        outline: none;
+        text-indent: 10px;
+    }
+    .dados:focus{
+        border: 1px solid #bbb;
+    }
+    #labelMensagem{
+        float: right;
+        margin-top: -198px;
+        margin-right: 290px;
+    }
+    #mensagem{
+        width: 350px;
+        border: 1px solid #ccc;
+        height: 100px;
+        text-indent: 10px;
+        float: right;
+        margin-top: -193px;
+        margin-right: 25px;
+        font-size: 17px;
+        resize: none;
+        outline: none;
+    }
+    #mensagem:focus{
+        border: 1px solid #bbb;
+    }
+    .enviar{
+        float: right;
+        width: 160px;
+        height: 35px;
+        font-size: 17px;
+        font-weight: bold;
+        margin-right: 25px;
+        margin-top: -50px;
+        background-color: #212121;
+        border: 0;
+        cursor: pointer;
+        color: #fff;
+        outline: none;
+    }
+
+/****Formatação do rodapé****/
+footer{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+    /*instrucoes ao usuario*/
+    footer .instrucoes{
+        width: 100%;
+        height: 150px;
+    }
+        .instrucoes .instrucao{
+            width: 200px;
+            height: 100%;
+            float: left;
+            padding-top: 20px;
+        }
+            .instrucao p{
+                font-size: 17px;
+                font-weight: bold;
+            }
+            .instrucao ul{
+                list-style: none;
+            }
+                .instrucao ul li a{
+                    text-decoration: none;
+                    line-height: 30px;
+                    color: #000;
+                }
+        /*formas de pagamento*/
+        .formasDePagamento{
+            width: 100%;
+            height: 50px;
+            border-top: dashed 1px #000;
+            border-bottom: dashed 1px #000;
+            padding-top: 4px;
+        }
+            .forma{
+                width: 70px;
+                height: 40px;
+                background-color: #eee;
+                border-radius: 3px;
+                float: left;
+                margin-right: 7px;
+                border: 1px solid #bbb;
+                text-align: center;
+            }
+                .forma img{
+                    width: 65px;
+                    height: 35px;
+                }
+                    .forma:nth-child(1) img{
+                        width: 60px;
+                        height: 30px;
+                        padding-top: 5px;
+                    }
+                    .forma:nth-child(2) img{
+                        width: 60px;
+                        height: 35px;
+                        padding-top: 3px;
+                    }
+                    .forma:nth-child(3) img{
+                        width: 60px;
+                        height: 48px;
+                        margin-top: -5px;
+                    }
+                    .forma:nth-child(4) img{
+                        width: 45px;
+                        height: 35px;
+                        padding-top: 2px;
+                    }
+                    .forma:nth-child(5) img{
+                        width: 60px;
+                        height: 48px;
+                        margin-top: -5px;
+                    }
+                    .forma:nth-child(6) img{
+                        width: 60px;
+                        height: 30px;
+                        margin-top: 3px;
+                    }
+                    .forma:nth-child(7) img{
+                        width: 60px;
+                        height: 48px;
+                        margin-top: -5px;
+                    }
+
+        /*direitos*/
+        .direitos{
+            width: 100%;
+            height: 30px;
+            padding: 10px 0;
+        }
+        .direitos p{
+            text-align: center;
+            font-size: 14px;
+        }
